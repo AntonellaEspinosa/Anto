@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <conio.h>
+#define TAM 10
+
+void ingreso (int*);
+void impresion (int, int);
+int suma_promedio_elementos(int*);
+
+int main ()
+{int v[TAM],j;
+ingreso(v);
+ suma_promedio_elementos(v);
+getch();
+return(0);
+}
+   //funciones
+
+void impresion (int a, int b)
+{printf("\n La suma es:%d",a);
+printf("\n El promedio es:%d ",b);}
+
+
+
+
+
+void ingreso (int* v)
+{int i;
+printf("Puede ingresar hasta 10 numeros ");
+for(i=0;i<TAM;i++)
+   {
+  		printf("\n ingrese un numero");
+		scanf("%d",v+i);
+    }
+
+
+
+}
+
+int suma_promedio_elementos   (int*v)
+{int i,suma=0,prom=0;
+for(i=0;i<TAM;i++)
+	{ suma += *(v+i);
+     prom=(float)suma/TAM;}
+
+    impresion (suma,prom);
+
+
+}
