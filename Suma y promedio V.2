@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <conio.h>
+#define TAM 10
+
+typedef struct
+{float prom;
+long suma;} SPV2;
+
+
+
+void ingreso (int*);
+void impresion (long, float);
+int sum_prom_v2(int*);
+
+void main ()
+{int v[TAM];
+ingreso(v);
+sum_prom_v2(v);
+getch();
+
+}
+   //funciones
+
+void impresion (int a, int b)
+{printf("\n La suma es:%d",a);
+printf("\n El promedio es:%d ",b);}
+
+
+
+
+
+void ingreso (int* v)
+{int i;
+printf("Puede ingresar hasta 10 numeros ");
+for(i=0;i<TAM;i++)
+   {
+  		printf("\n ingrese un numero");
+		scanf("%d",v+i);
+    }
+
+
+
+}
+
+void sum_prom_v2   (int*v)
+{int i;
+ SPV2 sp;
+for(i=0;i<TAM;i++)
+	{ sp.suma += *(v+i);
+     sp.prom=sp.suma/TAM;}
+
+impresion (sp.suma,sp.prom);
+
+
+}
